@@ -2,7 +2,7 @@ import socket
 import smtplib
 import socket
 from email.mime.text import MIMEText
-from config import * #중요정보는 config파일에 분리 저장
+from config import * #중요정보는 config파일에 분리 저장(메일 이름, 메일 주소, 보내는 메일 주소, 보내는 메일 앱비밀번호)
 
 def send_email(who, msg):
 	msg = MIMEText(msg)
@@ -20,5 +20,5 @@ if __name__ == '__main__':
 	#smtp 메일 전송
 	s = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 	s.login(MAIL_SENDER, MAIL_PASSWORD)
-	send_email('changhyunlyoo@gmail.com', ip)
+	send_email(MAIL RECEIVER, ip)
 	s.quit()
