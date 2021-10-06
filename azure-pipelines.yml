@@ -7,7 +7,10 @@ trigger:
 - main
 
 pool:
-  vmImage: selfhoster-aws
+  name: selfhosted
+  demands:
+    - agent.name -equals selfhoster-aws
+
 strategy:
   matrix:
     Python36:
